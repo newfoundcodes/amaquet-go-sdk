@@ -1,0 +1,43 @@
+{
+  "type": "bit_set",
+  "construction": {
+    "command": "CREATE",
+    "args": {
+      "key": "example:bit_set",
+      "type": "bit_set",
+      "options": {}
+    }
+  },
+  "operations": [
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:bit_set",
+        "operation": "SET",
+        "args": {
+          "bit": 7,
+          "value": true
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:bit_set",
+        "operation": "GETBIT",
+        "args": {
+          "bit": 7
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:bit_set",
+        "operation": "COUNT",
+        "args": {}
+      }
+    }
+  ],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
