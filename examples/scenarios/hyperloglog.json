@@ -1,0 +1,34 @@
+{
+  "type": "hyperloglog",
+  "construction": {
+    "command": "CREATE",
+    "args": {
+      "key": "example:hyperloglog",
+      "type": "hyperloglog",
+      "options": {
+        "precision": 12
+      }
+    }
+  },
+  "operations": [
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:hyperloglog",
+        "operation": "ADD",
+        "args": {
+          "value": "alice"
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:hyperloglog",
+        "operation": "COUNT",
+        "args": {}
+      }
+    }
+  ],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
