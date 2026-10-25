@@ -1,0 +1,19 @@
+{
+  "type": "sparse_vector",
+  "construction": {
+    "command": "SET",
+    "args": {
+      "key": "example:sparse_vector",
+      "type": "sparse_vector",
+      "value": {
+        "dim": 8,
+        "values": {
+          "1": 0.5,
+          "5": 1.25
+        }
+      }
+    }
+  },
+  "operations": [],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
