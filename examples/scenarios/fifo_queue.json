@@ -1,0 +1,51 @@
+{
+  "type": "fifo_queue",
+  "construction": {
+    "command": "CREATE",
+    "args": {
+      "key": "example:fifo_queue",
+      "type": "fifo_queue",
+      "options": {}
+    }
+  },
+  "operations": [
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:fifo_queue",
+        "operation": "ENQUEUE",
+        "args": {
+          "value": {
+            "type": "utf8_string",
+            "value": "first"
+          }
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:fifo_queue",
+        "operation": "PEEK",
+        "args": {}
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:fifo_queue",
+        "operation": "DEQUEUE",
+        "args": {}
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:fifo_queue",
+        "operation": "LEN",
+        "args": {}
+      }
+    }
+  ],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
