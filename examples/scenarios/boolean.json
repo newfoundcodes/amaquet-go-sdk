@@ -1,0 +1,22 @@
+{
+  "type": "boolean",
+  "construction": {
+    "command": "SET",
+    "args": {
+      "key": "example:boolean",
+      "type": "boolean",
+      "value": true
+    }
+  },
+  "operations": [
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:boolean",
+        "operation": "TOGGLE",
+        "args": {}
+      }
+    }
+  ],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
