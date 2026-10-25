@@ -1,0 +1,39 @@
+{
+  "type": "bit_field",
+  "construction": {
+    "command": "CREATE",
+    "args": {
+      "key": "example:bit_field",
+      "type": "bit_field",
+      "options": {
+        "size_bytes": 8
+      }
+    }
+  },
+  "operations": [
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:bit_field",
+        "operation": "SET",
+        "args": {
+          "offset": 4,
+          "width": 8,
+          "value": 171
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:bit_field",
+        "operation": "GET",
+        "args": {
+          "offset": 4,
+          "width": 8
+        }
+      }
+    }
+  ],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
