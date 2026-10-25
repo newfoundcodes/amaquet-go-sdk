@@ -1,0 +1,13 @@
+{
+  "type": "binary_string",
+  "construction": {
+    "command": "SET",
+    "args": {
+      "key": "example:binary_string",
+      "type": "binary_string",
+      "value": "AAECaGVsbG8="
+    }
+  },
+  "operations": [],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
