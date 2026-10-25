@@ -1,0 +1,60 @@
+{
+  "type": "roaring_bitmap",
+  "construction": {
+    "command": "CREATE",
+    "args": {
+      "key": "example:roaring_bitmap",
+      "type": "roaring_bitmap",
+      "options": {}
+    }
+  },
+  "operations": [
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:roaring_bitmap",
+        "operation": "ADD",
+        "args": {
+          "value": 42
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:roaring_bitmap",
+        "operation": "CONTAINS",
+        "args": {
+          "value": 42
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:roaring_bitmap",
+        "operation": "CARDINALITY",
+        "args": {}
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:roaring_bitmap",
+        "operation": "REMOVE",
+        "args": {
+          "value": 42
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:roaring_bitmap",
+        "operation": "VALUES",
+        "args": {}
+      }
+    }
+  ],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
