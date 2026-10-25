@@ -1,0 +1,45 @@
+{
+  "type": "delayed_queue",
+  "construction": {
+    "command": "CREATE",
+    "args": {
+      "key": "example:delayed_queue",
+      "type": "delayed_queue",
+      "options": {}
+    }
+  },
+  "operations": [
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:delayed_queue",
+        "operation": "ENQUEUE",
+        "args": {
+          "id": "job1",
+          "value": {
+            "type": "utf8_string",
+            "value": "payload"
+          },
+          "available_at_ms": 0
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:delayed_queue",
+        "operation": "POP_READY",
+        "args": {}
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:delayed_queue",
+        "operation": "LEN",
+        "args": {}
+      }
+    }
+  ],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
