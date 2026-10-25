@@ -1,0 +1,30 @@
+{
+  "type": "quantized_vector",
+  "construction": {
+    "command": "SET",
+    "args": {
+      "key": "example:quantized_vector",
+      "type": "quantized_vector",
+      "value": {
+        "Data": [
+          1,
+          2,
+          -3
+        ],
+        "Scale": 0.1,
+        "ZeroPoint": 0
+      }
+    }
+  },
+  "operations": [
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:quantized_vector",
+        "operation": "DEQUANTIZE",
+        "args": {}
+      }
+    }
+  ],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
