@@ -1,0 +1,41 @@
+{
+  "type": "persistent_topic",
+  "construction": {
+    "command": "CREATE",
+    "args": {
+      "key": "example:persistent_topic",
+      "type": "persistent_topic",
+      "options": {
+        "max_messages": 100
+      }
+    }
+  },
+  "operations": [
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:persistent_topic",
+        "operation": "PUBLISH",
+        "args": {
+          "message_key": "m1",
+          "value": {
+            "type": "utf8_string",
+            "value": "hello"
+          }
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:persistent_topic",
+        "operation": "READ",
+        "args": {
+          "from": 0,
+          "count": 10
+        }
+      }
+    }
+  ],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
