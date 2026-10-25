@@ -1,0 +1,44 @@
+{
+  "type": "big_decimal",
+  "construction": {
+    "command": "SET",
+    "args": {
+      "key": "example:big_decimal",
+      "type": "big_decimal",
+      "value": "12345678901234567890.000000000000000001"
+    }
+  },
+  "operations": [
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:big_decimal",
+        "operation": "ADD",
+        "args": {
+          "value": "0.3211"
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:big_decimal",
+        "operation": "CMP",
+        "args": {
+          "value": "12345678901234567890.321100000000000001"
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:big_decimal",
+        "operation": "SUB",
+        "args": {
+          "value": "0.0011"
+        }
+      }
+    }
+  ],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
