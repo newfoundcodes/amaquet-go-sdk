@@ -14,7 +14,7 @@ Use the module directly from the repository or configure your Go module to use a
 
 ```bash
 # Execute within your own Go project.
-go mod edit -replace github.com/newfoundcodes/amaquet-go-sdk=/absolute/path/to/amaquet/sdk/go
+go mod edit -replace github.com/newfoundcodes/amaquet-go-sdk=/absolute/path/to/amaquet-go-sdk
 go get github.com/newfoundcodes/amaquet-go-sdk
 ```
 
@@ -163,6 +163,8 @@ export AMAQUET_ADMIN_URL='http://127.0.0.1:13379'
 export AMAQUET_ADMIN_TOKEN='<your-admin-token>'
 ```
 
+The Go examples use `AMAQUET_URI` for the native URI. The equivalent C# and Java examples use `AMAQUET_ENDPOINT` and `AMAQUET_URL` respectively.
+
 Run from **inside this standalone module**:
 
 ```bash
@@ -191,7 +193,6 @@ The package includes **91 executable type examples**, **42 executable workflow e
 All standalone module tests work without the Amaquet server or third-party modules:
 
 ```bash
-cd sdk/go
 go test ./...
 go test -race ./...
 go vet ./...
