@@ -1,0 +1,36 @@
+{
+  "type": "numeric_field",
+  "construction": {
+    "command": "CREATE",
+    "args": {
+      "key": "example:numeric_field",
+      "type": "numeric_field",
+      "options": {
+        "name": "score",
+        "value": 42.5
+      }
+    }
+  },
+  "operations": [
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:numeric_field",
+        "operation": "SET",
+        "args": {
+          "name": "score",
+          "value": 99.5
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:numeric_field",
+        "operation": "GET",
+        "args": {}
+      }
+    }
+  ],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
