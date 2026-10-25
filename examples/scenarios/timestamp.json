@@ -1,0 +1,13 @@
+{
+  "type": "timestamp",
+  "construction": {
+    "command": "SET",
+    "args": {
+      "key": "example:timestamp",
+      "type": "timestamp",
+      "value": "2026-10-01T00:00:00Z"
+    }
+  },
+  "operations": [],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
