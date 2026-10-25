@@ -1,0 +1,52 @@
+{
+  "type": "multimap",
+  "construction": {
+    "command": "CREATE",
+    "args": {
+      "key": "example:multimap",
+      "type": "multimap",
+      "options": {}
+    }
+  },
+  "operations": [
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:multimap",
+        "operation": "ADD",
+        "args": {
+          "field": "tag",
+          "value": {
+            "type": "utf8_string",
+            "value": "alpha"
+          }
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:multimap",
+        "operation": "GET",
+        "args": {
+          "field": "tag"
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:multimap",
+        "operation": "REMOVE",
+        "args": {
+          "field": "tag",
+          "value": {
+            "type": "utf8_string",
+            "value": "alpha"
+          }
+        }
+      }
+    }
+  ],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
