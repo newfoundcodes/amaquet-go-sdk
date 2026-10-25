@@ -1,0 +1,55 @@
+{
+  "type": "multiset",
+  "construction": {
+    "command": "CREATE",
+    "args": {
+      "key": "example:multiset",
+      "type": "multiset",
+      "options": {}
+    }
+  },
+  "operations": [
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:multiset",
+        "operation": "ADD",
+        "args": {
+          "value": {
+            "type": "utf8_string",
+            "value": "alpha"
+          },
+          "count": 3
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:multiset",
+        "operation": "COUNT",
+        "args": {
+          "value": {
+            "type": "utf8_string",
+            "value": "alpha"
+          }
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:multiset",
+        "operation": "REMOVE",
+        "args": {
+          "value": {
+            "type": "utf8_string",
+            "value": "alpha"
+          },
+          "count": 1
+        }
+      }
+    }
+  ],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
