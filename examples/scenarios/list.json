@@ -1,0 +1,75 @@
+{
+  "type": "list",
+  "construction": {
+    "command": "CREATE",
+    "args": {
+      "key": "example:list",
+      "type": "list",
+      "options": {}
+    }
+  },
+  "operations": [
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:list",
+        "operation": "PUSH_BACK",
+        "args": {
+          "value": {
+            "type": "utf8_string",
+            "value": "alpha"
+          }
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:list",
+        "operation": "PUSH_FRONT",
+        "args": {
+          "value": {
+            "type": "integer",
+            "value": 7
+          }
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:list",
+        "operation": "LEN",
+        "args": {}
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:list",
+        "operation": "RANGE",
+        "args": {
+          "start": 0,
+          "stop": -1
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:list",
+        "operation": "POP_FRONT",
+        "args": {}
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:list",
+        "operation": "POP_BACK",
+        "args": {}
+      }
+    }
+  ],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
