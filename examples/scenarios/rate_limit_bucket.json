@@ -1,0 +1,35 @@
+{
+  "type": "rate_limit_bucket",
+  "construction": {
+    "command": "CREATE",
+    "args": {
+      "key": "example:rate_limit_bucket",
+      "type": "rate_limit_bucket",
+      "options": {
+        "capacity": 5,
+        "refill_per_second": 2
+      }
+    }
+  },
+  "operations": [
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:rate_limit_bucket",
+        "operation": "ALLOW",
+        "args": {
+          "cost": 1
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:rate_limit_bucket",
+        "operation": "REMAINING",
+        "args": {}
+      }
+    }
+  ],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
