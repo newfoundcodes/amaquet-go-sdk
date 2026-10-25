@@ -28,8 +28,15 @@ jobs:
         run: go version
 
       - name: Check formatting
+        if: matrix.os == 'ubuntu-latest'
         shell: bash
-        run: test -z "$(gofmt -l .)"
+        run: |
+          files="$(git ls-files '*.go' | xargs gofmt -l)"
+          if [ -n "$files" ]; then
+            echo "The following Go files are not gofmt-formatted:"
+            printf '%s\n' "$files"
+            exit 1
+          fi
 
       - name: Build all packages and examples
         run: go build ./...
