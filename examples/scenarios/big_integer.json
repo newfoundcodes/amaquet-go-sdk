@@ -1,0 +1,24 @@
+{
+  "type": "big_integer",
+  "construction": {
+    "command": "SET",
+    "args": {
+      "key": "example:big_integer",
+      "type": "big_integer",
+      "value": "1234567890123456789012345678901234567890"
+    }
+  },
+  "operations": [
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:big_integer",
+        "operation": "ADD",
+        "args": {
+          "value": "10"
+        }
+      }
+    }
+  ],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
