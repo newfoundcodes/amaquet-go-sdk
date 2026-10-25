@@ -1,0 +1,30 @@
+{
+  "type": "geo_point",
+  "construction": {
+    "command": "SET",
+    "args": {
+      "key": "example:geo_point",
+      "type": "geo_point",
+      "value": {
+        "Lat": 14.5995,
+        "Lon": 120.9842
+      }
+    }
+  },
+  "operations": [
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:geo_point",
+        "operation": "DISTANCE",
+        "args": {
+          "point": {
+            "Lat": 14.5995,
+            "Lon": 120.9842
+          }
+        }
+      }
+    }
+  ],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
