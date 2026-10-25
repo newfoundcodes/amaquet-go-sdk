@@ -1,0 +1,45 @@
+{
+  "type": "aggregated_series",
+  "construction": {
+    "command": "CREATE",
+    "args": {
+      "key": "example:aggregated_series",
+      "type": "aggregated_series",
+      "options": {
+        "bucket_ms": 1000,
+        "aggregation": "avg"
+      }
+    }
+  },
+  "operations": [
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:aggregated_series",
+        "operation": "AGGREGATE",
+        "args": {
+          "source_key": "example:timeseries:source",
+          "from": 0,
+          "to": 3000,
+          "bucket_ms": 1000,
+          "aggregation": "avg"
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:aggregated_series",
+        "operation": "RANGE",
+        "args": {
+          "source_key": "example:timeseries:source",
+          "from": 0,
+          "to": 3000,
+          "bucket_ms": 1000,
+          "aggregation": "avg"
+        }
+      }
+    }
+  ],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
