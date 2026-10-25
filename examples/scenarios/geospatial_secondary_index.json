@@ -1,0 +1,94 @@
+{
+  "type": "geospatial_secondary_index",
+  "construction": {
+    "command": "CREATE",
+    "args": {
+      "key": "example:geospatial_secondary_index",
+      "type": "geospatial_secondary_index",
+      "options": {}
+    }
+  },
+  "operations": [
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:geospatial_secondary_index",
+        "operation": "ADD",
+        "args": {
+          "id": "manila",
+          "point": {
+            "Lat": 14.5995,
+            "Lon": 120.9842
+          },
+          "metadata": {
+            "country": "PH"
+          }
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:geospatial_secondary_index",
+        "operation": "RADIUS",
+        "args": {
+          "center": {
+            "Lat": 14.5995,
+            "Lon": 120.9842
+          },
+          "radius_meters": 100,
+          "limit": 5
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:geospatial_secondary_index",
+        "operation": "REMOVE",
+        "args": {
+          "id": "manila"
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:geospatial_secondary_index",
+        "operation": "BOX",
+        "args": {
+          "box": {
+            "MinLat": 14.0,
+            "MinLon": 120.0,
+            "MaxLat": 15.0,
+            "MaxLon": 122.0
+          }
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:geospatial_secondary_index",
+        "operation": "POLYGON",
+        "args": {
+          "points": [
+            {
+              "Lat": 14.5,
+              "Lon": 120.9
+            },
+            {
+              "Lat": 14.7,
+              "Lon": 120.9
+            },
+            {
+              "Lat": 14.6,
+              "Lon": 121.1
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
