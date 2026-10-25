@@ -1,0 +1,44 @@
+{
+  "type": "decimal",
+  "construction": {
+    "command": "SET",
+    "args": {
+      "key": "example:decimal",
+      "type": "decimal",
+      "value": "12345.6789"
+    }
+  },
+  "operations": [
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:decimal",
+        "operation": "ADD",
+        "args": {
+          "value": "0.3211"
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:decimal",
+        "operation": "CMP",
+        "args": {
+          "value": "12346.0000"
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:decimal",
+        "operation": "SUB",
+        "args": {
+          "value": "0.3211"
+        }
+      }
+    }
+  ],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
