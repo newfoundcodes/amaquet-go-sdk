@@ -1,0 +1,24 @@
+{
+  "type": "consumer_group",
+  "construction": {
+    "command": "CREATE",
+    "args": {
+      "key": "example:consumer_group",
+      "type": "consumer_group",
+      "options": {
+        "name": "workers"
+      }
+    }
+  },
+  "operations": [
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:consumer_group",
+        "operation": "SNAPSHOT",
+        "args": {}
+      }
+    }
+  ],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
