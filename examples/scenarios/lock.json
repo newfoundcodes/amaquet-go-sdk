@@ -1,0 +1,47 @@
+{
+  "type": "lock",
+  "construction": {
+    "command": "CREATE",
+    "args": {
+      "key": "example:lock",
+      "type": "lock",
+      "options": {}
+    }
+  },
+  "operations": [
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:lock",
+        "operation": "TRY_LOCK",
+        "args": {
+          "owner": "worker-a",
+          "token": "t1",
+          "ttl_ms": 5000
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:lock",
+        "operation": "UNLOCK",
+        "args": {
+          "token": "t1"
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:lock",
+        "operation": "RENEW",
+        "args": {
+          "token": "t1",
+          "ttl_ms": 5000
+        }
+      }
+    }
+  ],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
