@@ -1,0 +1,60 @@
+{
+  "type": "btree_index",
+  "construction": {
+    "command": "CREATE",
+    "args": {
+      "key": "example:btree_index",
+      "type": "btree_index",
+      "options": {
+        "degree": 8
+      }
+    }
+  },
+  "operations": [
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:btree_index",
+        "operation": "INSERT",
+        "args": {
+          "value": "b",
+          "id": "2"
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:btree_index",
+        "operation": "SEARCH",
+        "args": {
+          "value": "a"
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:btree_index",
+        "operation": "DELETE",
+        "args": {
+          "value": "b",
+          "id": "2"
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:btree_index",
+        "operation": "RANGE",
+        "args": {
+          "value": "a",
+          "max": "z",
+          "limit": 10
+        }
+      }
+    }
+  ],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
