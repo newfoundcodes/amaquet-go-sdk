@@ -1,0 +1,69 @@
+{
+  "type": "gauge_series",
+  "construction": {
+    "command": "CREATE",
+    "args": {
+      "key": "example:gauge_series",
+      "type": "gauge_series",
+      "options": {
+        "labels": {
+          "metric": "cpu"
+        }
+      }
+    }
+  },
+  "operations": [
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:gauge_series",
+        "operation": "SET",
+        "args": {
+          "timestamp": 1000,
+          "value": 42.5
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:gauge_series",
+        "operation": "LAST",
+        "args": {}
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:gauge_series",
+        "operation": "RANGE",
+        "args": {
+          "from": 0,
+          "to": 3000
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:gauge_series",
+        "operation": "AGGREGATE",
+        "args": {
+          "from": 0,
+          "to": 3000,
+          "bucket_ms": 1000,
+          "aggregation": "avg"
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:gauge_series",
+        "operation": "LEN",
+        "args": {}
+      }
+    }
+  ],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
