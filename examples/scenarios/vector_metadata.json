@@ -1,0 +1,43 @@
+{
+  "type": "vector_metadata",
+  "construction": {
+    "command": "CREATE",
+    "args": {
+      "key": "example:vector_metadata",
+      "type": "vector_metadata",
+      "options": {}
+    }
+  },
+  "operations": [
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:vector_metadata",
+        "operation": "SET",
+        "args": {
+          "field": "lang",
+          "value": "en"
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:vector_metadata",
+        "operation": "GET",
+        "args": {}
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:vector_metadata",
+        "operation": "DELETE",
+        "args": {
+          "field": "lang"
+        }
+      }
+    }
+  ],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
