@@ -1,0 +1,38 @@
+{
+  "type": "timeseries_labels",
+  "construction": {
+    "command": "CREATE",
+    "args": {
+      "key": "example:timeseries_labels",
+      "type": "timeseries_labels",
+      "options": {
+        "labels": {
+          "env": "prod",
+          "region": "local"
+        }
+      }
+    }
+  },
+  "operations": [
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:timeseries_labels",
+        "operation": "SET",
+        "args": {
+          "label": "region",
+          "value": "ph"
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:timeseries_labels",
+        "operation": "GET",
+        "args": {}
+      }
+    }
+  ],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
