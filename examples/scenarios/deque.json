@@ -1,0 +1,74 @@
+{
+  "type": "deque",
+  "construction": {
+    "command": "CREATE",
+    "args": {
+      "key": "example:deque",
+      "type": "deque",
+      "options": {
+        "capacity": 8
+      }
+    }
+  },
+  "operations": [
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:deque",
+        "operation": "PUSH_BACK",
+        "args": {
+          "value": {
+            "type": "utf8_string",
+            "value": "alpha"
+          }
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:deque",
+        "operation": "PUSH_FRONT",
+        "args": {
+          "value": {
+            "type": "integer",
+            "value": 7
+          }
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:deque",
+        "operation": "LEN",
+        "args": {}
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:deque",
+        "operation": "POP_FRONT",
+        "args": {}
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:deque",
+        "operation": "POP_BACK",
+        "args": {}
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:deque",
+        "operation": "VALUES",
+        "args": {}
+      }
+    }
+  ],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
