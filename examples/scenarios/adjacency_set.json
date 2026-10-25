@@ -1,0 +1,47 @@
+{
+  "type": "adjacency_set",
+  "construction": {
+    "command": "CREATE",
+    "args": {
+      "key": "example:adjacency_set",
+      "type": "adjacency_set",
+      "options": {}
+    }
+  },
+  "operations": [
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:adjacency_set",
+        "operation": "ADD",
+        "args": {
+          "from": "a",
+          "to": "b",
+          "weight": 1.5
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:adjacency_set",
+        "operation": "NEIGHBORS",
+        "args": {
+          "from": "a"
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:adjacency_set",
+        "operation": "REMOVE",
+        "args": {
+          "from": "a",
+          "to": "b"
+        }
+      }
+    }
+  ],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
