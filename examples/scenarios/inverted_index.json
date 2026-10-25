@@ -1,0 +1,46 @@
+{
+  "type": "inverted_index",
+  "construction": {
+    "command": "CREATE",
+    "args": {
+      "key": "example:inverted_index",
+      "type": "inverted_index",
+      "options": {}
+    }
+  },
+  "operations": [
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:inverted_index",
+        "operation": "INDEX",
+        "args": {
+          "id": "d1",
+          "text": "amaquet in-memory database"
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:inverted_index",
+        "operation": "SEARCH",
+        "args": {
+          "query": "memory",
+          "limit": 10
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:inverted_index",
+        "operation": "REMOVE",
+        "args": {
+          "id": "d1"
+        }
+      }
+    }
+  ],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
