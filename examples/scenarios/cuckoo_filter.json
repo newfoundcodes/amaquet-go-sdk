@@ -1,0 +1,46 @@
+{
+  "type": "cuckoo_filter",
+  "construction": {
+    "command": "CREATE",
+    "args": {
+      "key": "example:cuckoo_filter",
+      "type": "cuckoo_filter",
+      "options": {
+        "capacity": 1024
+      }
+    }
+  },
+  "operations": [
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:cuckoo_filter",
+        "operation": "ADD",
+        "args": {
+          "value": "alice"
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:cuckoo_filter",
+        "operation": "CONTAINS",
+        "args": {
+          "value": "alice"
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:cuckoo_filter",
+        "operation": "REMOVE",
+        "args": {
+          "value": "alice"
+        }
+      }
+    }
+  ],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
