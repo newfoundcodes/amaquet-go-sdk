@@ -1,0 +1,72 @@
+{
+  "type": "full_text_document",
+  "construction": {
+    "command": "CREATE",
+    "args": {
+      "key": "example:full_text_document",
+      "type": "full_text_document",
+      "options": {
+        "id": "doc-1",
+        "metadata": {
+          "source": "import"
+        }
+      }
+    }
+  },
+  "operations": [
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:full_text_document",
+        "operation": "ADD_TEXT",
+        "args": {
+          "name": "body",
+          "value": "hello amaquet world",
+          "weight": 2
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:full_text_document",
+        "operation": "ADD_TAG",
+        "args": {
+          "name": "tags",
+          "values": [
+            "go",
+            "memory"
+          ]
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:full_text_document",
+        "operation": "ADD_NUMERIC",
+        "args": {
+          "name": "score",
+          "value": 9.5
+        }
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:full_text_document",
+        "operation": "SNAPSHOT",
+        "args": {}
+      }
+    },
+    {
+      "command": "OP",
+      "args": {
+        "key": "example:full_text_document",
+        "operation": "GET",
+        "args": {}
+      }
+    }
+  ],
+  "warning": "Operations may block, mutate state, or require prerequisite state; execute intentionally."
+}
